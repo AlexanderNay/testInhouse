@@ -81,7 +81,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let newsItems = newsItems else { return 0 }
-        //return feed.items.count
         return newsItems.count
     }
     
