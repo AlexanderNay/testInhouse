@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireRSSParser
 import Kingfisher
 
 class FeedTableViewCell: UITableViewCell {
