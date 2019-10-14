@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.7.3)
+  - AlamofireRSSParser (2.2.0):
+    - Alamofire
+  - Kingfisher (5.8.3):
+    - Kingfisher/Core (= 5.8.3)
+  - Kingfisher/Core (5.8.3)
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7.3)
+  - AlamofireRSSParser
+  - Kingfisher (~> 5.8)
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireRSSParser
+    - Kingfisher
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireRSSParser: 4feb3c8cedf1fba2759ba30cf37cdf6ba45efd38
+  Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+
+PODFILE CHECKSUM: 9f6caec07584f2f48ff191c5bc7a1f7b831a6b52
+
+COCOAPODS: 1.8.3
