@@ -13,7 +13,7 @@ import AlamofireRSSParser
 
 class DataMenager {
 
-    private let url = "https://news.yandex.ru/Moscow/index.rss"
+    private let url = "https://news.rambler.ru/rss/moscow_city/"
     
     func getItems(complition: @escaping([NewsItem]?, Error?) -> Void) {
         

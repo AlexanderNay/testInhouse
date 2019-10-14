@@ -19,17 +19,44 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var activityIndicatorContainerView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     let dataManager = DataMenager()
     var indexPath = IndexPath()
     var newsItems: [NewsItem]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showActivityIndicator()
         registerCells()
         dataManager.getItems { (newsItems, error) in
+            if error != nil {
+                self.showAlert()
+            }
             self.newsItems = newsItems
             self.mainTableView.reloadData()
+            self.hideActivityIndicator()
         }
+    }
+    
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Отсутствует интернет соединение", message: "Используются данные из кэша", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showActivityIndicator() {
+        activityIndicator.startAnimating()
+        activityIndicatorContainerView.layer.cornerRadius = 8
+        activityIndicatorContainerView.isHidden = false
+    }
+    
+    private func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+        activityIndicatorContainerView.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,8 +100,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         self.indexPath = indexPath
         performSegue(withIdentifier: "toNews", sender: self)
     }
-    
-    
-    
+      
 }
 
